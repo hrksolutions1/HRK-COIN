@@ -1,6 +1,6 @@
 import React from 'react';
-import Login from './auth/signin';
-import Register from './auth/signup';
+import Login from './auth/Login';
+import Register from './auth/Registeruser';
 import { Component } from 'react';
 
 

@@ -12,9 +12,7 @@ export default function(ComposedComponent) {
         this.context.router.push('/');
       }
     }
-    
-   
-
+       
     componentWillUpdate(nextProps) {
       if (!nextProps.authenticated) {
         this.context.router.push('/');

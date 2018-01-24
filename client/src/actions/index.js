@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { AUTH_USER, AUTH_ERROR, UNAUTH_USER, FETCH_MESSAGE } from './types'; // action types
+import { AUTH_USER, AUTH_ERROR, UNAUTH_USER, FETCH_MESSAGE } from './actiontypes'; // action types
 
-const ROOT_URL = 'http://localhost:3090';
+const base_url = 'http://localhost:3090';
 
-export function signinUser({ email, password }) {
+export function logInUser({ email, password }) {
   return function (dispatch) {
     // Submit to server
-    axios.post(`${ROOT_URL}/login`, { email, password }) // email:email, pasword:pasword  ... etc.
+    axios.post(`${base_url}/login`, { email, password }) // email:email, pasword:pasword  ... etc.
       .then(response => {
         // If good:
         // Update state to Authenticated
@@ -26,10 +26,10 @@ export function signinUser({ email, password }) {
 
 };
 
-export function signupUser({ email, password, userName }) {
+export function registerUser({ email, password, userName }) {
   return function (dispatch) {
     axios({
-        url: `${ROOT_URL}/register`,
+        url: `${base_url}/register`,
         data: { email, password, userName },
         method: 'post',
         responseType: 'json'
@@ -50,10 +50,10 @@ export function authError(error) {
     type: AUTH_ERROR,
     payload: error
   };
-   browserHistory.push('/login');
+   //browserHistory.push('/');
 };
 
-export function signoutUser() {
+export function logoutUser() {
   localStorage.removeItem('token');
    browserHistory.push('/');
   return {
@@ -66,7 +66,7 @@ export function signoutUser() {
 export function fetchMessage() {
   return function (dispatch) {
     axios({
-     url:  `${ROOT_URL}/profile`,
+     url:  `${base_url}/profile`,
      headers: { authorization: localStorage.getItem('token') },
      method: 'get'
    })

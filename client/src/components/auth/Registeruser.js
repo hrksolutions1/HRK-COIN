@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 
-class Signup extends Component {
+class Register extends Component {
   handleFormSubmit(formProps) {
     // Call action creator to signup
-    this.props.signupUser(formProps);
+    this.props.registerUser(formProps);
   }
   renderAlert(){
     if (this.props.errorMessage){
@@ -89,4 +89,4 @@ export default reduxForm({
   form: 'register',
   fields: ['userName','email','password','passwordConfirm'],
   validate
-},mapStateToProps,actions)(Signup);
+},mapStateToProps,actions)(Register);

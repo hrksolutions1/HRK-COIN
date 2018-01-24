@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 // import { Link } from 'react-router';
 
-class Feature extends Component {
+class Profile extends Component {
 
   componentWillMount(){
     this.props.fetchMessage();
@@ -20,4 +20,4 @@ function mapStateToProps(state) {
   return { message: state.auth.message };
 }
 
-export default connect(mapStateToProps, actions)(Feature);
+export default connect(mapStateToProps, actions)(Profile);

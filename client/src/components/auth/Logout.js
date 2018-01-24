@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import * as actions from "../../actions";
 
 
-class Signout extends Component {
+class Logout extends Component {
   componentWillMount() {
-    this.props.signoutUser();
+    this.props.logoutUser();
   }
   render(){
     return <div>Signed out</div>;
@@ -13,4 +13,4 @@ class Signout extends Component {
 }
 
 
-export default connect(null,actions)(Signout);
+export default connect(null,actions)(Logout);

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 
-class Signin extends Component {
+class Login extends Component {
   handleFormSubmit({ email, password }){
-    this.props.signinUser({email, password});
+    this.props.logInUser({email, password});
   }
   renderAlert(){
     if(this.props.errorMessage){
@@ -44,4 +44,4 @@ function mapStateToProps(state) {
 export default reduxForm({
     form: 'login',
     fields:['email','password']
-}, mapStateToProps, actions)(Signin);
+}, mapStateToProps, actions)(Login);

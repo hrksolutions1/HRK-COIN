@@ -1,9 +1,9 @@
 import React from 'react';
 import { Component } from 'react';
-import Header from './header';
-import Footer from './footer';
-import Login from './auth/signin';
-import Register from './auth/signup';
+import Header from './Header';
+import Footer from './Footer';
+import Login from './auth/Login';
+import Register from './auth/Registeruser';
 
 export default class App extends Component {
   render() {
